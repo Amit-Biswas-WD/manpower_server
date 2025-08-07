@@ -4,6 +4,7 @@ import { IContact } from "../../interfaces/home/contact.interfaces";
 const contactSchema = new Schema<IContact>(
   {
     phone: { type: Number, require: true },
+    image: { type: String, require: true },
     email: { type: mongoose.Schema.Types.Mixed, require: true },
     location: { type: mongoose.Schema.Types.Mixed, require: true },
     workingHours: { type: mongoose.Schema.Types.Mixed, require: true },
