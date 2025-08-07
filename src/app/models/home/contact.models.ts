@@ -5,7 +5,7 @@ const contactSchema = new Schema<IContact>(
   {
     phone: { type: Number, require: true },
     email: { type: mongoose.Schema.Types.Mixed, require: true },
-    location: { type: String, require: true },
+    location: { type: mongoose.Schema.Types.Mixed, require: true },
     workingHours: { type: mongoose.Schema.Types.Mixed, require: true },
   },
   { versionKey: false, timestamps: true }
