@@ -8,10 +8,23 @@ import { faqRoutes } from "./app/models/home/faq.models";
 import { aboutBannerRouters } from "./app/controllers/about/banner.controllers";
 import { brandRouters } from "./app/controllers/about/brand.controllers";
 import { contactInputRouters } from "./app/controllers/about/contactinput.controllers";
+import { vMissionRouters } from "./app/controllers/about/visionmission.controllers";
 const app: Application = express();
 app.use(express.json());
 
-app.use("/manpower", bannerRouters, serviceRouters, categoryRoutes, testimonialRoutes, contactRoutes, faqRoutes, aboutBannerRouters, brandRouters, contactInputRouters);
+app.use(
+  "/manpower",
+  bannerRouters,
+  serviceRouters,
+  categoryRoutes,
+  testimonialRoutes,
+  contactRoutes,
+  faqRoutes,
+  aboutBannerRouters,
+  brandRouters,
+  contactInputRouters,
+  vMissionRouters
+);
 
 app.get("/", (req: Request, res: Response) => {
   res.send("Welcome to Manpower to do App!!!");
