@@ -3,7 +3,7 @@ import { Service } from "../../models/home/service.models";
 
 export const service2Routers = express.Router();
 
-service2Routers.post("/service/create_banner", async (req: Request, res: Response) => {
+service2Routers.post("/service_banner/create_banner", async (req: Request, res: Response) => {
   const body = req.body;
   const service = await Service.create(body);
 
@@ -14,7 +14,7 @@ service2Routers.post("/service/create_banner", async (req: Request, res: Respons
   });
 });
 
-service2Routers.get("/service", async (req: Request, res: Response) => {
+service2Routers.get("/service_banner", async (req: Request, res: Response) => {
   const service = await Service.find();
 
   res.status(201).json({
@@ -24,7 +24,7 @@ service2Routers.get("/service", async (req: Request, res: Response) => {
   });
 });
 
-service2Routers.get("/service/:manpowerId", async (req: Request, res: Response) => {
+service2Routers.get("/service_banner/:manpowerId", async (req: Request, res: Response) => {
   const manpowerId = req.params.manpowerId;
   const service = await Service.findById(manpowerId);
 
@@ -35,7 +35,7 @@ service2Routers.get("/service/:manpowerId", async (req: Request, res: Response) 
   });
 });
 
-service2Routers.patch("/service/:manpowerId", async (req: Request, res: Response) => {
+service2Routers.patch("/service_banner/:manpowerId", async (req: Request, res: Response) => {
   const manpowerId = req.params.manpowerId;
   const updatedBody = req.body;
   const service = await Service.findByIdAndUpdate(
@@ -53,7 +53,7 @@ service2Routers.patch("/service/:manpowerId", async (req: Request, res: Response
   });
 });
 
-service2Routers.delete("/service/:manpowerId", async (req: Request, res: Response) => {
+service2Routers.delete("/service_banner/:manpowerId", async (req: Request, res: Response) => {
   const manpowerId = req.params.manpowerId;
   const service = await Service.findByIdAndDelete(manpowerId);
 
