@@ -13,6 +13,8 @@ import { service2Routers } from "./app/controllers/service/serviceBanner.control
 import { ourServiceRouters } from "./app/controllers/service/ourService.controlers";
 import { projectRouters } from "./app/controllers/project/project.controllers";
 import { cBannerRouters } from "./app/controllers/career/banner.controllers";
+import { jobRouters } from "./app/controllers/career/job.controllers";
+import { applyJobRouters } from "./app/controllers/career/applyInput.controllers";
 const app: Application = express();
 app.use(express.json());
 
@@ -31,7 +33,9 @@ app.use(
   service2Routers,
   ourServiceRouters,
   projectRouters,
-  cBannerRouters
+  cBannerRouters,
+  jobRouters,
+  applyJobRouters
 );
 
 app.get("/", (req: Request, res: Response) => {

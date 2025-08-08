@@ -1,5 +1,3 @@
-
-
 import { AboutBanner } from "../../models/about/banner.models";
 import express, { Request, Response }  from "express";
 
