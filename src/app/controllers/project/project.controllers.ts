@@ -1,52 +1,50 @@
 import express, { Request, Response } from "express";
-import { OurService } from "../../models/service/ourService.models";
+import { Project } from "../../models/project/project.models";
 
-export const ourServiceRouters = express.Router();
+export const projectRouters = express.Router();
 
-ourServiceRouters.post(
-  "/our_service/create_service",
-  async (req: Request, res: Response) => {
+projectRouters.post("/project/create_project", async (req: Request, res: Response) => {
     const body = req.body;
-    const ourService = await OurService.create(body);
+    const project = await Project.create(body);
 
     res.status(201).json({
       success: true,
       message: "our service Created Successfully.",
-      ourService: ourService,
+      project: project,
     });
   }
 );
 
-ourServiceRouters.get("/our_service", async (req: Request, res: Response) => {
-  const ourService = await OurService.find();
+projectRouters.get("/project", async (req: Request, res: Response) => {
+  const project = await Project.find();
 
   res.status(201).json({
     success: true,
     message: "See our service All manpower.",
-    ourService: ourService,
+    project: project,
   });
 });
 
-ourServiceRouters.get(
-  "/our_service/:manpowerId",
+projectRouters.get(
+  "/project/:manpowerId",
   async (req: Request, res: Response) => {
     const manpowerId = req.params.manpowerId;
-    const ourService = await OurService.findById(manpowerId);
+    const project = await Project.findById(manpowerId);
 
     res.status(201).json({
       success: true,
       message: "See our service Single manpowerId",
-      ourService: ourService,
+      project: project,
     });
   }
 );
 
-ourServiceRouters.patch(
-  "/our_service/:manpowerId",
+projectRouters.patch(
+  "/project/:manpowerId",
   async (req: Request, res: Response) => {
     const manpowerId = req.params.manpowerId;
     const updatedBody = req.body;
-    const ourService = await OurService.findByIdAndUpdate(
+    const project = await Project.findByIdAndUpdate(
       { _id: manpowerId },
       updatedBody,
       {
@@ -57,21 +55,21 @@ ourServiceRouters.patch(
     res.status(201).json({
       success: true,
       message: "Updated Successfully.",
-      ourService: ourService,
+      project: project,
     });
   }
 );
 
-ourServiceRouters.delete(
-  "/our_service/:manpowerId",
+projectRouters.delete(
+  "/project/:manpowerId",
   async (req: Request, res: Response) => {
     const manpowerId = req.params.manpowerId;
-    const ourService = await OurService.findByIdAndDelete(manpowerId);
+    const project = await Project.findByIdAndDelete(manpowerId);
 
     res.status(201).json({
       success: true,
       message: "Delete Successfully.",
-      ourService: ourService,
+      project: project,
     });
   }
 );
