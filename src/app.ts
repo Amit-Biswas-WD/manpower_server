@@ -15,6 +15,7 @@ import { projectRouters } from "./app/controllers/project/project.controllers";
 import { cBannerRouters } from "./app/controllers/career/banner.controllers";
 import { jobRouters } from "./app/controllers/career/job.controllers";
 import { applyJobRouters } from "./app/controllers/career/applyInput.controllers";
+import { bookServicesRouters } from "./app/controllers/bookService/banner.controllers";
 const app: Application = express();
 app.use(express.json());
 
@@ -35,7 +36,8 @@ app.use(
   projectRouters,
   cBannerRouters,
   jobRouters,
-  applyJobRouters
+  applyJobRouters,
+  bookServicesRouters
 );
 
 app.get("/", (req: Request, res: Response) => {
