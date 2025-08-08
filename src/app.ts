@@ -12,6 +12,7 @@ import { vMissionRouters } from "./app/controllers/about/visionmission.controlle
 import { service2Routers } from "./app/controllers/service/serviceBanner.controllers";
 import { ourServiceRouters } from "./app/controllers/service/ourService.controlers";
 import { projectRouters } from "./app/controllers/project/project.controllers";
+import { cBannerRouters } from "./app/controllers/career/banner.controllers";
 const app: Application = express();
 app.use(express.json());
 
@@ -29,7 +30,8 @@ app.use(
   vMissionRouters,
   service2Routers,
   ourServiceRouters,
-  projectRouters
+  projectRouters,
+  cBannerRouters
 );
 
 app.get("/", (req: Request, res: Response) => {
